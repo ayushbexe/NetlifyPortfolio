@@ -1,0 +1,31 @@
+# Netlify deploys this site automatically on every push to GitHub.
+# Only index.html and Assets/ are published, so server.js, package.json and lib/ are never public.
+
+[build]
+  command = "rm -rf dist && mkdir dist && cp -r index.html Assets dist/"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+
+# The contact form posts to /send-email, same as the local server.
+[[redirects]]
+  from = "/send-email"
+  to = "/.netlify/functions/send-email"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/Assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

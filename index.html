@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ayush Bhargava | Video Editor & Motion Designer</title>
+    <meta name="description" content="Ayush Bhargava is a video editor and motion designer cutting reels, ads, YouTube videos and brand films. Based in Uttar Pradesh, India, working with clients worldwide.">
+    <meta name="theme-color" content="#08090a">
+    <link rel="icon" href="Assets/Images/favicon.svg" type="image/svg+xml">
+
+    <!-- Social share preview (LinkedIn, WhatsApp, Instagram, X).
+         After you deploy, change og:image and og:url to full addresses, e.g. https://yourdomain.com/Assets/Images/posters/showreel.jpg -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ayush Bhargava | Video Editor & Motion Designer">
+    <meta property="og:description" content="Reels, ads, YouTube videos and brand films, edited to keep people watching.">
+    <meta property="og:image" content="Assets/Images/posters/showreel.jpg">
+    <meta property="og:url" content="/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ayush Bhargava",
+        "jobTitle": "Video Editor & Motion Designer",
+        "email": "mailto:ayushb.exe@gmail.com",
+        "address": { "@type": "PostalAddress", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" },
+        "sameAs": [
+            "https://www.youtube.com/@CigarettesafterFx",
+            "https://www.instagram.com/ayushbthecreator/",
+            "https://www.linkedin.com/in/ayush-bhargava-94aaba318/"
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="image" href="Assets/Images/posters/showreel.jpg">
+
+    <script>document.documentElement.classList.add('js');</script>
+
+    <style>
+        /* ================= TOKENS ================= */
+        :root {
+            --bg: #08090a;
+            --bg-2: #0c0d0f;
+            --surface: #111215;
+            --surface-2: #17191d;
+            --line: #23262b;
+            --line-2: #2f333a;
+            --text: #eef0f2;
+            --muted: #a4aab1;
+            --dim: #6f767e;
+            --accent: #39ff14;
+            --accent-2: #8dff6e;
+            --accent-ink: #061200;
+            --accent-soft: rgba(57, 255, 20, 0.1);
+            --danger: #ff7a7a;
+
+            --radius: 20px;
+            --radius-sm: 12px;
+            --max: 1440px;
+            --gutter: clamp(16px, 4vw, 48px);
+            --font: 'Outfit', system-ui, sans-serif;
+            --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+            --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* ================= BASE ================= */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 17px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        img, video { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+        h1, h2, h3, p { margin: 0; }
+        ::selection { background: var(--accent); color: var(--accent-ink); }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+
+        .skip-link {
+            position: absolute; left: -9999px; top: 12px; z-index: 200;
+            background: var(--accent); color: var(--accent-ink); font-weight: 700;
+            padding: 10px 16px; border-radius: 10px;
+        }
+        .skip-link:focus { left: 16px; }
+
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+        /* Subtle film grain over the whole page */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: -50%;
+            z-index: 90;
+            pointer-events: none;
+            opacity: 0.055;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            animation: grain 1.2s steps(6) infinite;
+        }
+        @keyframes grain {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-3%, 2%); }
+            40% { transform: translate(2%, -3%); }
+            60% { transform: translate(-2%, -1%); }
+            80% { transform: translate(3%, 3%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+        section { position: relative; padding: clamp(80px, 10vw, 136px) 0; }
+
+        /* ================= TYPE ================= */
+        .tc-label {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: var(--mono); font-size: 12px; font-weight: 500;
+            letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim);
+        }
+        .tc-label::before {
+            content: ""; width: 8px; height: 8px; border-radius: 2px;
+            background: var(--accent); box-shadow: 0 0 12px rgba(57, 255, 20, 0.7);
+        }
+        .tc-label .num { color: var(--accent); }
+
+        .h2 {
+            font-size: clamp(36px, 5.2vw, 64px);
+            font-weight: 800; line-height: 1.02; letter-spacing: -0.03em;
+            margin-top: 18px;
+        }
+        .accent { color: var(--accent); }
+        .lead { color: var(--muted); font-size: clamp(17px, 1.5vw, 19px); max-width: 58ch; }
+        .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: clamp(40px, 5vw, 64px); }
+        .section-head .lead { max-width: 44ch; }
+
+        /* ================= BUTTONS ================= */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            height: 50px; padding: 0 24px; border-radius: 999px;
+            font-weight: 700; font-size: 15px; white-space: nowrap;
+            transition: transform 0.25s var(--ease), box-shadow 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
+        }
+        .btn-primary { background: var(--accent); color: var(--accent-ink); }
+        .btn-primary:hover { transform: translateY(-2px); background: var(--accent-2); box-shadow: 0 12px 32px -10px rgba(57, 255, 20, 0.6); }
+        .btn-ghost { border: 1px solid var(--line-2); color: var(--text); background: rgba(255, 255, 255, 0.02); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-sm { height: 40px; padding: 0 18px; font-size: 14px; }
+
+        /* ================= NAV ================= */
+        .nav {
+            position: fixed; inset: 0 0 auto; z-index: 50;
+            border-bottom: 1px solid transparent;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .nav.scrolled {
+            background: rgba(8, 9, 10, 0.8);
+            -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+            border-color: var(--line);
+        }
+        .nav .wrap { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.03em; font-size: 17px; }
+        .brand-mark {
+            width: 36px; height: 36px; border-radius: 10px; flex: none;
+            display: grid; place-items: center;
+            background: var(--accent); color: var(--accent-ink); font-weight: 900; font-size: 14px; letter-spacing: 0;
+            box-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+        }
+        .brand span b { color: var(--accent); font-weight: 800; }
+        .nav-links { display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; }
+        .nav-links a:not(.btn) { color: var(--muted); transition: color 0.2s; position: relative; }
+        .nav-links a:not(.btn):hover, .nav-links a.active { color: var(--text); }
+        .nav-links a.active::after {
+            content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+            background: var(--accent); border-radius: 2px;
+        }
+        .menu-btn { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line-2); place-items: center; font-size: 18px; }
+        .mobile-menu {
+            display: none; border-top: 1px solid var(--line);
+            background: rgba(8, 9, 10, 0.97); padding: 12px var(--gutter) 24px;
+        }
+        .mobile-menu a:not(.btn) { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 18px; font-weight: 600; }
+        .mobile-menu .btn { width: 100%; margin-top: 18px; }
+        @media (max-width: 860px) {
+            .nav-links { display: none; }
+            .menu-btn { display: grid; }
+            .nav.open .mobile-menu { display: block; }
+            .nav.open { background: rgba(8, 9, 10, 0.97); border-color: var(--line); }
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 100vh; min-height: 100svh;
+            display: flex; align-items: center;
+            padding: 112px 0 72px; overflow: hidden;
+        }
+        .hero::before {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background-image: radial-gradient(rgba(57, 255, 20, 0.35) 1px, transparent 1px);
+            background-size: 26px 26px;
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 45%, #000 0%, transparent 70%);
+            mask-image: radial-gradient(ellipse 70% 60% at 70% 45%, #000 0%, transparent 70%);
+            opacity: 0.25;
+        }
+        .hero::after {
+            content: ""; position: absolute; width: 640px; height: 640px; right: -160px; top: 8%;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.16), transparent 65%);
+            filter: blur(40px); pointer-events: none;
+        }
+        .hero .wrap { width: 100%; position: relative; z-index: 1; }
+        .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(36px, 4vw, 64px); align-items: center; }
+
+        .status {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 7px 14px 7px 12px; border-radius: 999px;
+            border: 1px solid var(--line-2); background: var(--surface);
+            font-size: 13px; color: var(--muted); font-weight: 500;
+        }
+        .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: ping 2s infinite; }
+        @keyframes ping {
+            0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.55); }
+            70% { box-shadow: 0 0 0 10px rgba(57, 255, 20, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
+        }
+        .hero h1 {
+            font-size: clamp(44px, 4.6vw, 74px);
+            font-weight: 900; line-height: 0.98; letter-spacing: -0.04em;
+            margin: 24px 0 22px;
+        }
+        .hero h1 .accent { display: inline-block; }
+        .hero .lead { max-width: 46ch; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+        .hero-stats { display: flex; flex-wrap: wrap; gap: 14px 36px; margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line); }
+        .stat b { display: block; font-size: 30px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+        .stat b em { font-style: normal; color: var(--accent); }
+        .stat span { display: block; margin-top: 6px; font-size: 13px; color: var(--dim); }
+
+        /* Program monitor (showreel player) */
+        .monitor {
+            border: 1px solid var(--line-2); border-radius: var(--radius);
+            background: var(--surface); overflow: hidden;
+            box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+        }
+        .monitor-bar, .monitor-controls {
+            display: flex; align-items: center; gap: 14px;
+            padding: 0 16px; height: 44px;
+            font-family: var(--mono); font-size: 12px; color: var(--dim);
+            background: var(--bg-2);
+        }
+        .monitor-bar { border-bottom: 1px solid var(--line); }
+        .monitor-bar .rec { display: inline-flex; align-items: center; gap: 8px; color: var(--text); text-transform: uppercase; letter-spacing: 0.08em; }
+        .monitor-bar .rec i { width: 8px; height: 8px; border-radius: 50%; background: #ff3b3b; box-shadow: 0 0 10px #ff3b3b; animation: blink 1.6s steps(2) infinite; }
+        @keyframes blink { 50% { opacity: 0.25; } }
+        .monitor-bar .file { margin-left: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .monitor-screen { position: relative; aspect-ratio: 16 / 9; background: #000; }
+        .monitor-screen video { width: 100%; height: 100%; object-fit: cover; }
+        .monitor-screen .safe {
+            position: absolute; inset: 6%; pointer-events: none;
+            border: 1px dashed rgba(255, 255, 255, 0.08); border-radius: 4px;
+        }
+        .monitor-expand {
+            position: absolute; right: 14px; bottom: 14px;
+            display: inline-flex; align-items: center; gap: 8px;
+            height: 38px; padding: 0 14px; border-radius: 999px;
+            background: rgba(8, 9, 10, 0.75); border: 1px solid var(--line-2);
+            -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+            font-size: 13px; font-weight: 600; transition: border-color 0.2s, color 0.2s;
+        }
+        .monitor-expand:hover { border-color: var(--accent); color: var(--accent); }
+        .monitor-controls { border-top: 1px solid var(--line); height: 52px; }
+        .ctrl {
+            width: 34px; height: 34px; border-radius: 9px; flex: none;
+            display: grid; place-items: center; color: var(--text);
+            border: 1px solid var(--line-2); transition: border-color 0.2s, color 0.2s;
+        }
+        .ctrl:hover { border-color: var(--accent); color: var(--accent); }
+        .ctrl[aria-pressed="true"] { color: var(--accent); border-color: rgba(57, 255, 20, 0.5); }
+        .timecode { color: var(--accent); font-variant-numeric: tabular-nums; min-width: 11ch; }
+        .timecode.dim { color: var(--dim); text-align: right; }
+        .scrub {
+            position: relative; flex: 1; height: 26px; cursor: pointer; touch-action: none;
+            background:
+                repeating-linear-gradient(90deg, var(--line-2) 0 1px, transparent 1px 10%) bottom / 100% 6px no-repeat,
+                linear-gradient(var(--line), var(--line)) center / 100% 4px no-repeat;
+            border-radius: 4px;
+        }
+        .scrub-fill { position: absolute; left: 0; top: 11px; height: 4px; width: 0; background: var(--accent); border-radius: 4px; }
+        .scrub-head {
+            position: absolute; top: 0; bottom: 0; left: 0; width: 2px; margin-left: -1px;
+            background: var(--accent); box-shadow: 0 0 10px var(--accent);
+        }
+        .scrub-head::before {
+            content: ""; position: absolute; top: -2px; left: -5px;
+            border: 6px solid transparent; border-top-color: var(--accent);
+        }
+
+        @media (max-width: 1000px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero { min-height: 0; }
+        }
+        @media (max-width: 520px) {
+            .monitor-bar .spec, .timecode.dim { display: none; }
+            .monitor-controls { gap: 10px; padding: 0 12px; }
+            .monitor-expand span { display: none; }
+            .monitor-expand { width: 38px; padding: 0; justify-content: center; }
+        }
+
+        /* ================= TICKER ================= */
+        .ticker {
+            border-block: 1px solid var(--line); background: var(--bg-2);
+            overflow: hidden; padding: 18px 0; position: relative;
+        }
+        .ticker-track { display: flex; width: max-content; animation: ticker 40s linear infinite; }
+        .ticker-track span {
+            font-size: clamp(20px, 2.4vw, 30px); font-weight: 800; letter-spacing: -0.01em;
+            padding: 0 22px; color: var(--muted); white-space: nowrap;
+        }
+        .ticker-track span.sep { color: var(--accent); padding: 0; }
+        @keyframes ticker { to { transform: translateX(-50%); } }
+
+        /* ================= ABOUT ================= */
+        .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+        .viewfinder { position: relative; padding: 18px; }
+        .viewfinder img {
+            width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 30%;
+            border-radius: 14px; filter: contrast(1.05);
+        }
+        .viewfinder .corner { position: absolute; width: 34px; height: 34px; border-color: var(--accent); border-style: solid; border-width: 0; }
+        .viewfinder .tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; border-top-left-radius: 10px; }
+        .viewfinder .tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; border-top-right-radius: 10px; }
+        .viewfinder .bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; border-bottom-left-radius: 10px; }
+        .viewfinder .br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; border-bottom-right-radius: 10px; }
+        .viewfinder .vf-label {
+            position: absolute; left: 34px; bottom: 34px;
+            font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--text);
+            background: rgba(8, 9, 10, 0.7); padding: 6px 10px; border-radius: 6px;
+            -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+        }
+        .about-copy p + p { margin-top: 18px; }
+        .about-copy .lead { margin-top: 26px; }
+        .about-copy .lead strong { color: var(--text); font-weight: 600; }
+        .stack-title { margin: 36px 0 14px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+        .stack { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+        .stack li {
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 10px 16px; border-radius: 12px;
+            background: var(--surface); border: 1px solid var(--line);
+            font-size: 15px; font-weight: 500;
+        }
+        .stack li i { color: var(--accent); font-size: 14px; }
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .viewfinder { max-width: 460px; }
+        }
+
+        /* ================= SERVICES ================= */
+        .services { background: var(--bg-2); border-block: 1px solid var(--line); }
+        .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .service {
+            position: relative; padding: 32px 28px 30px; border-radius: var(--radius);
+            background: var(--surface); border: 1px solid var(--line);
+            transition: border-color 0.3s, transform 0.3s var(--ease);
+            overflow: hidden;
+        }
+        .service:hover { border-color: rgba(57, 255, 20, 0.45); transform: translateY(-4px); }
+        .service::after {
+            content: ""; position: absolute; inset: auto -40% -60% auto; width: 260px; height: 260px;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.12), transparent 65%);
+            opacity: 0; transition: opacity 0.4s; pointer-events: none;
+        }
+        .service:hover::after { opacity: 1; }
+        .service .icon {
+            width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+            background: var(--accent-soft); color: var(--accent); font-size: 20px;
+            border: 1px solid rgba(57, 255, 20, 0.25);
+        }
+        .service h3 { font-size: 23px; font-weight: 700; letter-spacing: -0.01em; margin: 24px 0 10px; }
+        .service p { color: var(--muted); font-size: 16px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; list-style: none; padding: 0; }
+        .tags li {
+            font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--muted);
+            padding: 5px 9px; border-radius: 6px; border: 1px solid var(--line-2);
+        }
+        @media (max-width: 900px) { .service-grid { grid-template-columns: 1fr; } }
+
+        /* ================= WORK ================= */
+        .media {
+            position: relative; display: block; width: 100%; overflow: hidden;
+            background: #000; border-radius: var(--radius-sm); text-align: left;
+        }
+        .media video, .media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease), opacity 0.4s; }
+        .media::after {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 45%);
+        }
+        .media:hover video { transform: scale(1.035); }
+        .chip {
+            position: absolute; top: 14px; left: 14px; z-index: 2;
+            padding: 5px 11px; border-radius: 999px;
+            background: rgba(8, 9, 10, 0.75); border: 1px solid var(--line-2);
+            -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+            color: var(--accent); font-size: 12px; font-weight: 600;
+        }
+        .duration {
+            position: absolute; right: 14px; bottom: 14px; z-index: 2;
+            font-family: var(--mono); font-size: 12px; color: var(--text);
+            background: rgba(8, 9, 10, 0.75); padding: 4px 8px; border-radius: 6px;
+        }
+        .play {
+            position: absolute; left: 50%; top: 50%; z-index: 2;
+            width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%;
+            display: grid; place-items: center; font-size: 20px;
+            background: var(--accent); color: var(--accent-ink);
+            box-shadow: 0 0 0 8px rgba(57, 255, 20, 0.15), 0 10px 40px rgba(57, 255, 20, 0.35);
+            transform: scale(0.85); opacity: 0.9;
+            transition: transform 0.35s var(--ease), opacity 0.3s;
+        }
+        .play i { margin-left: 3px; }
+        .media:hover .play, .media:focus-visible .play { transform: scale(1); opacity: 1; }
+        @media (hover: hover) {
+            .play { opacity: 0; }
+            .media:hover .play, .media:focus-visible .play { opacity: 1; }
+        }
+
+        /* Featured project */
+        .featured {
+            display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+            border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+            overflow: hidden; transition: border-color 0.3s;
+        }
+        .featured:hover { border-color: rgba(57, 255, 20, 0.4); }
+        .featured .media { aspect-ratio: 16 / 9; border-radius: 0; }
+        .featured-info { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; }
+        .featured-info .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+        .featured-info h3 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 14px 0 14px; }
+        .featured-info p { color: var(--muted); font-size: 16px; }
+        .meta { margin: auto 0 0; padding-top: 24px; display: grid; gap: 12px; }
+        .meta div { display: flex; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; }
+        .meta dt { color: var(--dim); }
+        .meta dd { margin: 0; color: var(--text); font-weight: 500; text-align: right; }
+        @media (max-width: 900px) { .featured { grid-template-columns: 1fr; } }
+
+        /* Short-form row */
+        .shortform { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 4vw, 56px); margin-top: clamp(56px, 7vw, 96px); align-items: start; }
+        .shortform-intro { position: sticky; top: 110px; }
+        .shortform-intro h3 { font-size: clamp(28px, 3vw, 38px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; margin: 16px 0 14px; }
+        .shortform-intro p { color: var(--muted); }
+        .reel-row {
+            display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 16px;
+        }
+        .reel { display: flex; flex-direction: column; }
+        .reel .media { aspect-ratio: 9 / 16; border: 1px solid var(--line); border-radius: var(--radius); }
+        .reel h4 { font-size: 18px; font-weight: 700; margin: 16px 0 4px; line-height: 1.25; }
+        .reel p { color: var(--muted); font-size: 14px; }
+        .reel .reel-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; font-size: 13px; color: var(--dim); }
+        .reel .reel-meta span:last-child { color: var(--accent); text-align: right; }
+
+        .next-card {
+            aspect-ratio: 9 / 16; border-radius: var(--radius);
+            border: 1px dashed var(--line-2);
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px;
+            padding: 26px; transition: border-color 0.3s, background 0.3s;
+            background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(255, 255, 255, 0.012) 14px 28px);
+        }
+        .next-card:hover { border-color: var(--accent); background-color: var(--accent-soft); }
+        .next-card .plus {
+            width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+            border: 1px solid var(--line-2); color: var(--accent); font-size: 20px;
+            transition: transform 0.4s var(--ease);
+        }
+        .next-card:hover .plus { transform: rotate(90deg); }
+        .next-card strong { font-size: 22px; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
+        .next-card span { color: var(--muted); font-size: 14px; }
+
+        /* AI animated row */
+        .ai-row { padding-top: clamp(56px, 7vw, 96px); border-top: 1px solid var(--line); }
+        .ai-row .chip i { margin-right: 4px; font-size: 0.9em; }
+        .ai-steps { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
+        .ai-steps li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text); }
+        .ai-steps i { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-size: 13px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--line); flex: none; }
+
+        @media (max-width: 1000px) {
+            .shortform { grid-template-columns: 1fr; }
+            .shortform-intro { position: static; }
+        }
+        @media (max-width: 720px) {
+            .reel-row {
+                grid-auto-columns: 72%;
+                overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+                margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 8px;
+                scrollbar-width: none;
+            }
+            .reel-row::-webkit-scrollbar { display: none; }
+            .reel-row > * { scroll-snap-align: start; }
+        }
+
+        /* ================= PROCESS ================= */
+        .process-track { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; list-style: none; padding: 0; margin: 0; }
+        .process-track::before {
+            content: ""; position: absolute; left: 0; right: 0; top: 23px; height: 2px;
+            background: repeating-linear-gradient(90deg, var(--line-2) 0 8px, transparent 8px 14px);
+        }
+        .step { position: relative; }
+        .step .marker {
+            position: relative; width: 48px; height: 48px; border-radius: 14px;
+            display: grid; place-items: center;
+            background: var(--bg); border: 1px solid var(--line-2);
+            font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--accent);
+        }
+        .step h3 { font-size: 22px; font-weight: 700; margin: 24px 0 8px; }
+        .step p { color: var(--muted); font-size: 16px; }
+        .step .clip {
+            margin-top: 22px; height: 10px; border-radius: 4px;
+            background: linear-gradient(90deg, rgba(57, 255, 20, 0.55), rgba(57, 255, 20, 0.15));
+            transform-origin: left; transform: scaleX(0); transition: transform 1s var(--ease);
+        }
+        .step:nth-child(2) .clip { transition-delay: 0.15s; }
+        .step:nth-child(3) .clip { transition-delay: 0.3s; }
+        .step:nth-child(4) .clip { transition-delay: 0.45s; }
+        .process-track.in .clip { transform: scaleX(1); }
+        @media (max-width: 900px) {
+            .process-track { grid-template-columns: 1fr 1fr; row-gap: 44px; }
+            .process-track::before { display: none; }
+        }
+        @media (max-width: 540px) { .process-track { grid-template-columns: 1fr; } }
+
+        /* ================= CONTACT ================= */
+        .contact-card {
+            position: relative; overflow: hidden;
+            border: 1px solid var(--line); border-radius: 28px; background: var(--surface);
+            padding: clamp(28px, 5vw, 64px);
+            display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 72px);
+        }
+        .contact-card::before {
+            content: ""; position: absolute; width: 520px; height: 520px; top: -260px; left: -160px;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.14), transparent 65%);
+            pointer-events: none;
+        }
+        .contact-card > * { position: relative; }
+        .contact-lines { display: grid; gap: 12px; margin-top: 36px; }
+        .contact-line {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg-2);
+            transition: border-color 0.2s;
+        }
+        a.contact-line:hover { border-color: var(--accent); }
+        .contact-line i {
+            width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; flex: none;
+            background: var(--accent-soft); color: var(--accent);
+        }
+        .contact-line small { display: block; font-size: 12px; color: var(--dim); font-family: var(--mono); letter-spacing: 0.05em; text-transform: uppercase; }
+        .contact-line span { font-weight: 600; word-break: break-word; }
+        .socials { display: flex; gap: 10px; margin-top: 24px; }
+        .socials a {
+            width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+            border: 1px solid var(--line-2); color: var(--muted); font-size: 17px;
+            transition: color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .socials a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+        .form { display: grid; gap: 16px; align-content: start; }
+        .field label { display: block; margin-bottom: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+        .field input, .field textarea, .field select {
+            width: 100%; padding: 14px 16px; border-radius: 12px;
+            background: var(--bg-2); border: 1px solid var(--line-2); color: var(--text);
+            font: inherit; font-size: 16px; transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .field textarea { resize: vertical; min-height: 140px; }
+        .field input::placeholder, .field textarea::placeholder { color: var(--dim); }
+        .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+        .form .btn { width: 100%; height: 54px; font-size: 16px; }
+        .form .btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+        .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+        .form-status { font-size: 15px; padding: 13px 16px; border-radius: 12px; border: 1px solid; }
+        .form-status[hidden] { display: none; }
+        .form-status.ok { color: var(--accent); border-color: rgba(57, 255, 20, 0.4); background: var(--accent-soft); }
+        .form-status.err { color: var(--danger); border-color: rgba(255, 122, 122, 0.4); background: rgba(255, 122, 122, 0.08); }
+        @media (max-width: 900px) { .contact-card { grid-template-columns: 1fr; } }
+
+        /* ================= FOOTER ================= */
+        .footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--dim); font-size: 14px; }
+        .footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
+        .footer nav { display: flex; flex-wrap: wrap; gap: 22px; }
+        .footer nav a:hover { color: var(--accent); }
+
+        /* ================= LIGHTBOX PLAYER ================= */
+        .player {
+            width: min(1200px, 94vw); max-width: none; max-height: 94vh;
+            padding: 0; border: 1px solid var(--line-2); border-radius: 18px;
+            background: var(--surface); color: var(--text); overflow: hidden;
+        }
+        .player.portrait { width: fit-content; }
+        .player::backdrop { background: rgba(0, 0, 0, 0.88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+        .player-head {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            height: 52px; padding: 0 10px 0 18px; border-bottom: 1px solid var(--line);
+            background: var(--bg-2);
+        }
+        .player-title { font-family: var(--mono); font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .player-title b { color: var(--text); font-weight: 600; }
+        .player video { width: 100%; max-height: calc(94vh - 54px); background: #000; }
+        .player.portrait video { width: auto; height: calc(94vh - 54px); max-height: 860px; aspect-ratio: 9 / 16; }
+        @media (max-width: 600px) {
+            .player.portrait { width: 94vw; }
+            .player.portrait video { width: 100%; height: auto; max-height: calc(94vh - 54px); }
+        }
+
+        /* ================= REVEAL ON SCROLL ================= */
+        .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+        .js .reveal.in { opacity: 1; transform: none; }
+        .js .reveal.d1 { transition-delay: 0.08s; }
+        .js .reveal.d2 { transition-delay: 0.16s; }
+        .js .reveal.d3 { transition-delay: 0.24s; }
+
+        /* ================= REDUCED MOTION ================= */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+            body::after { animation: none; }
+            .ticker-track { animation: none; }
+            .js .reveal { opacity: 1; transform: none; }
+            .step .clip { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ================= NAV ================= -->
+    <header class="nav" id="navbar">
+        <div class="wrap">
+            <a href="#top" class="brand" aria-label="AyushBTheCreator, back to top">
+                <span class="brand-mark">AB</span>
+                <span>AYUSHB<b>THECREATOR</b></span>
+            </a>
+            <nav class="nav-links" aria-label="Main">
+                <a href="#work">Work</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#process">Process</a>
+                <a href="#contact" class="btn btn-primary btn-sm">Let's talk</a>
+            </nav>
+            <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#process">Process</a>
+            <a href="#contact" class="btn btn-primary">Let's talk</a>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="top">
+            <div class="wrap">
+                <div class="hero-grid">
+                    <div>
+                        <!-- Update this line whenever your availability changes -->
+                        <p class="status reveal"><span class="dot" aria-hidden="true"></span> Available for new projects</p>
+                        <h1 class="reveal d1">Edits that keep people <span class="accent">watching.</span></h1>
+                        <p class="lead reveal d2">I'm Ayush Bhargava, a video editor and motion designer. I cut reels, ads, YouTube videos and brand films with tight pacing, clean color and sound that hits.</p>
+                        <div class="hero-ctas reveal d3">
+                            <button class="btn btn-primary" type="button" data-play="Assets/Videos/web/showreel.mp4" data-title="Showreel 2026">
+                                <i class="fa-solid fa-play" aria-hidden="true"></i> Watch showreel
+                            </button>
+                            <a href="#contact" class="btn btn-ghost">Start a project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="hero-stats reveal d3">
+                            <div class="stat"><b>75<em>+</em></b><span>Projects delivered</span></div>
+                            <div class="stat"><b>1<em>+</em></b><span>Years of experience</span></div>
+                            <div class="stat"><b>Remote</b><span>Working worldwide</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Program monitor: the showreel plays here muted; "Watch with sound" opens the full player -->
+                    <div class="monitor reveal d2" id="showreel">
+                        <div class="monitor-bar">
+                            <span class="rec"><i aria-hidden="true"></i> Program</span>
+                            <span class="file">showreel_2026.mp4</span>
+                            <span class="spec">1080p · 60 fps</span>
+                        </div>
+                        <div class="monitor-screen">
+                            <video id="showreel-video" autoplay muted loop playsinline preload="auto" poster="Assets/Images/posters/showreel.jpg" aria-label="Showreel preview, muted">
+                                <source src="Assets/Videos/web/showreel.mp4" type="video/mp4">
+                            </video>
+                            <div class="safe" aria-hidden="true"></div>
+                            <button class="monitor-expand" type="button" data-play="Assets/Videos/web/showreel.mp4" data-title="Showreel 2026">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i><span>Watch with sound</span>
+                            </button>
+                        </div>
+                        <div class="monitor-controls">
+                            <button class="ctrl" id="reel-toggle" type="button" aria-label="Pause showreel"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
+                            <span class="timecode" id="reel-tc" aria-hidden="true">00:00:00:00</span>
+                            <div class="scrub" id="reel-scrub" role="slider" tabindex="0" aria-label="Showreel position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                <div class="scrub-fill" id="reel-fill"></div>
+                                <div class="scrub-head" id="reel-head"></div>
+                            </div>
+                            <span class="timecode dim" id="reel-dur" aria-hidden="true">00:00:15:00</span>
+                            <button class="ctrl" id="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on"><i class="fa-solid fa-volume-xmark" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TICKER ================= -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>Short-form reels</span><span class="sep">✦</span>
+                <span>Meta ads</span><span class="sep">✦</span>
+                <span>YouTube videos</span><span class="sep">✦</span>
+                <span>Brand films</span><span class="sep">✦</span>
+                <span>Motion graphics</span><span class="sep">✦</span>
+                <span>Color grading</span><span class="sep">✦</span>
+                <span>Sound design</span><span class="sep">✦</span>
+                <span>Short-form reels</span><span class="sep">✦</span>
+                <span>Meta ads</span><span class="sep">✦</span>
+                <span>YouTube videos</span><span class="sep">✦</span>
+                <span>Brand films</span><span class="sep">✦</span>
+                <span>Motion graphics</span><span class="sep">✦</span>
+                <span>Color grading</span><span class="sep">✦</span>
+                <span>Sound design</span><span class="sep">✦</span>
+            </div>
+        </div>
+
+        <!-- ================= WORK ================= -->
+        <section id="work">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <p class="tc-label reveal"><span class="num">01</span> 00:00:15:00 · Selected work</p>
+                        <h2 class="h2 reveal d1">Recent <span class="accent">cuts</span>.</h2>
+                    </div>
+                    <p class="lead reveal d2">A few recent projects across short-form ads, personal edits and animated explainers. Tap any video to watch it with sound.</p>
+                </div>
+
+                <!--
+                    HOW TO ADD A PROJECT
+                    1. Put a web-sized video in Assets/Videos/web/ and a still frame in Assets/Images/posters/
+                    2. Copy an <article class="reel"> block below (vertical videos) or the featured block (landscape)
+                    3. Change data-play, data-src, poster, the title, the text and the duration
+                -->
+
+                <!-- Featured (landscape) project -->
+                <article class="featured reveal">
+                    <button class="media" type="button" data-play="Assets/Videos/web/fable_5.mp4" data-title="Claude's New Fable 5" aria-label="Play Claude's New Fable 5">
+                        <video class="lazy-video" data-src="Assets/Videos/web/fable_5.mp4" poster="Assets/Images/posters/fable_5.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                        <span class="chip">Animated Explainer</span>
+                        <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                        <span class="duration">00:49</span>
+                    </button>
+                    <div class="featured-info">
+                        <span class="kicker">Featured · Spec work</span>
+                        <h3>Claude's New Fable 5</h3>
+                        <p>A motion-graphics explainer for YouTube with animated typography and a theme built around the brand.</p>
+                        <dl class="meta">
+                            <div><dt>Format</dt><dd>YouTube explainer, 16:9</dd></div>
+                            <div><dt>Role</dt><dd>Edit, motion, typography</dd></div>
+                            <div><dt>Tools</dt><dd>DaVinci Resolve</dd></div>
+                        </dl>
+                    </div>
+                </article>
+
+                <!-- Short-form row -->
+                <div class="shortform">
+                    <div class="shortform-intro reveal">
+                        <p class="tc-label"><span class="num">9:16</span> Short form</p>
+                        <h3>Built for the scroll.</h3>
+                        <p>Hooks in the first second, pacing that holds attention, and captions and sound design made for Reels and Shorts.</p>
+                    </div>
+
+                    <div class="reel-row">
+                        <article class="reel reveal">
+                            <button class="media" type="button" data-play="Assets/Videos/web/reel_1.mp4" data-title="School Promotional Film" data-portrait aria-label="Play School Promotional Film">
+                                <video class="lazy-video" data-src="Assets/Videos/web/reel_1.mp4" poster="Assets/Images/posters/reel_1.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip">Meta Ad</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">00:24</span>
+                            </button>
+                            <h4>School Promotional Film</h4>
+                            <p>A cinematic promo cut for Meta ads.</p>
+                            <div class="reel-meta"><span>Welham Girls' School</span><span>After Effects</span></div>
+                        </article>
+
+                        <article class="reel reveal d1">
+                            <button class="media" type="button" data-play="Assets/Videos/web/inspiring_edit.mp4" data-title="Personality Edit" data-portrait aria-label="Play Personality Edit">
+                                <video class="lazy-video" data-src="Assets/Videos/web/inspiring_edit.mp4" poster="Assets/Images/posters/inspiring_edit.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip">YouTube Short</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">01:15</span>
+                            </button>
+                            <h4>Personality Edit</h4>
+                            <p>An inspirational YouTube Shorts edit.</p>
+                            <div class="reel-meta"><span>Personal project</span><span>DaVinci Resolve</span></div>
+                        </article>
+
+                        <a href="#contact" class="next-card reveal d2">
+                            <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <strong>Your project could be next.</strong>
+                            <span>Send me your footage and I'll show you what it can become.</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI animated row -->
+                <div class="shortform ai-row">
+                    <div class="shortform-intro reveal">
+                        <p class="tc-label"><span class="num">AI</span> Animated shorts</p>
+                        <h3>Faceless videos, <span class="accent">fully animated.</span></h3>
+                        <p>Explainer shorts with no camera and no actors: script, AI voiceover, 3D animation and captions synced word by word.</p>
+                        <ul class="ai-steps">
+                            <li><i class="fa-solid fa-pen-nib"></i> Researched script</li>
+                            <li><i class="fa-solid fa-microphone-lines"></i> AI voiceover</li>
+                            <li><i class="fa-solid fa-cube"></i> 3D animated scenes</li>
+                            <li><i class="fa-solid fa-closed-captioning"></i> Word-synced captions</li>
+                        </ul>
+                    </div>
+
+                    <div class="reel-row">
+                        <article class="reel reveal">
+                            <button class="media" type="button" data-play="Assets/Videos/web/ai_caffeine.mp4" data-title="What Happens When You Drink Coffee?" data-portrait aria-label="Play What Happens When You Drink Coffee?">
+                                <video class="lazy-video" data-src="Assets/Videos/web/ai_caffeine.mp4" poster="Assets/Images/posters/ai_caffeine.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Animated</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">00:47</span>
+                            </button>
+                            <h4>What Happens When You Drink Coffee?</h4>
+                            <p>A 3D science explainer on what caffeine does inside your body.</p>
+                            <div class="reel-meta"><span>Faceless Short</span><span>3D explainer</span></div>
+                        </article>
+
+                        <article class="reel reveal d1">
+                            <button class="media" type="button" data-play="Assets/Videos/web/ai_claude-code-faster.mp4" data-title="What If A Week Of Work Was Due Tomorrow?" data-portrait aria-label="Play What If A Week Of Work Was Due Tomorrow?">
+                                <video class="lazy-video" data-src="Assets/Videos/web/ai_claude-code-faster.mp4" poster="Assets/Images/posters/ai_claude-code-faster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Animated</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">00:40</span>
+                            </button>
+                            <h4>What If A Week Of Work Was Due Tomorrow?</h4>
+                            <p>A what-if short on getting a week of coding done with Claude Code.</p>
+                            <div class="reel-meta"><span>Faceless Short</span><span>Tech explainer</span></div>
+                        </article>
+
+                        <a href="#contact" class="next-card reveal d2">
+                            <span class="plus" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <strong>Need a faceless channel?</strong>
+                            <span>Give me a topic and I'll turn it into an animated short, ready to post.</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stream clipping row -->
+                <div class="shortform ai-row">
+                    <div class="shortform-intro reveal">
+                        <p class="tc-label"><span class="num">LIVE</span> Stream clipping</p>
+                        <h3>Hours of stream, <span class="accent">cut to the moments.</span></h3>
+                        <p>AI-assisted clipping from long livestreams: the best moments found, cut to 9:16 and captioned, ready for Shorts, Reels and TikTok.</p>
+                        <ul class="ai-steps">
+                            <li><i class="fa-solid fa-satellite-dish"></i> Full VOD scanned</li>
+                            <li><i class="fa-solid fa-bolt"></i> Peak moments picked</li>
+                            <li><i class="fa-solid fa-mobile-screen"></i> Facecam + gameplay layout</li>
+                            <li><i class="fa-solid fa-closed-captioning"></i> Title bar &amp; word captions</li>
+                        </ul>
+                    </div>
+
+                    <div class="reel-row">
+                        <article class="reel reveal">
+                            <button class="media" type="button" data-play="Assets/Videos/web/clip_gamerfleet_crime.mp4" data-title="GamerFleet's First Crime in GTA 6 Goes Wrong" data-portrait aria-label="Play GamerFleet's First Crime in GTA 6 Goes Wrong">
+                                <video class="lazy-video" data-src="Assets/Videos/web/clip_gamerfleet_crime.mp4" poster="Assets/Images/posters/clip_gamerfleet_crime.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip"><i class="fa-solid fa-scissors"></i> Stream Clip</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">00:43</span>
+                            </button>
+                            <h4>First Crime in GTA 6 Goes Wrong</h4>
+                            <p>Pulled from GamerFleet's 2.5-hour first GTA 6 livestream.</p>
+                            <div class="reel-meta"><span>GamerFleet</span><span>GTA 6</span></div>
+                        </article>
+
+                        <article class="reel reveal d1">
+                            <button class="media" type="button" data-play="Assets/Videos/web/clip_typical_banned.mp4" data-title="Typical Gamer Got Banned for Jason's..." data-portrait aria-label="Play Typical Gamer Got Banned for Jason's...">
+                                <video class="lazy-video" data-src="Assets/Videos/web/clip_typical_banned.mp4" poster="Assets/Images/posters/clip_typical_banned.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip"><i class="fa-solid fa-scissors"></i> Stream Clip</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">00:56</span>
+                            </button>
+                            <h4>Got Banned for Jason's...</h4>
+                            <p>A funny moment cut from a long GTA 6 free-roam stream.</p>
+                            <div class="reel-meta"><span>Typical Gamer</span><span>GTA 6</span></div>
+                        </article>
+
+                        <article class="reel reveal d2">
+                            <button class="media" type="button" data-play="Assets/Videos/web/clip_typical_dating.mp4" data-title="Typical Gamer Runs a Dating App in GTA 6" data-portrait aria-label="Play Typical Gamer Runs a Dating App in GTA 6">
+                                <video class="lazy-video" data-src="Assets/Videos/web/clip_typical_dating.mp4" poster="Assets/Images/posters/clip_typical_dating.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                                <span class="chip"><i class="fa-solid fa-scissors"></i> Stream Clip</span>
+                                <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <span class="duration">00:58</span>
+                            </button>
+                            <h4>Runs a Dating App in GTA 6</h4>
+                            <p>The same stream, a different highlight, ready to post.</p>
+                            <div class="reel-meta"><span>Typical Gamer</span><span>GTA 6</span></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SERVICES ================= -->
+        <section id="services" class="services">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <p class="tc-label reveal"><span class="num">02</span> 00:00:30:00 · Services</p>
+                        <h2 class="h2 reveal d1">What I can <span class="accent">cut</span> for you.</h2>
+                    </div>
+                    <p class="lead reveal d2">From a single reel to a full campaign, I handle the edit end to end: story, pacing, color, sound and motion.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service reveal">
+                        <span class="icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                        <h3>Short-form &amp; Reels</h3>
+                        <p>Scroll-stopping hooks, captions and punchy pacing for Instagram Reels, YouTube Shorts and TikTok.</p>
+                        <ul class="tags"><li>9:16</li><li>Captions</li><li>Hooks</li><li>Trends</li></ul>
+                    </article>
+                    <article class="service reveal d1">
+                        <span class="icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
+                        <h3>Ads &amp; Brand Films</h3>
+                        <p>Promos and commercials for schools, products and brands, graded and finished to match your identity.</p>
+                        <ul class="tags"><li>Meta ads</li><li>Promos</li><li>Color grade</li><li>Sound design</li></ul>
+                    </article>
+                    <article class="service reveal d2">
+                        <span class="icon" aria-hidden="true"><i class="fa-brands fa-youtube"></i></span>
+                        <h3>YouTube &amp; Explainers</h3>
+                        <p>Long-form edits, animated explainers and motion graphics that keep viewers watching from intro to outro.</p>
+                        <ul class="tags"><li>16:9</li><li>Motion graphics</li><li>Typography</li><li>Retention</li></ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about">
+            <div class="wrap about-grid">
+                <div class="viewfinder reveal">
+                    <span class="corner tl" aria-hidden="true"></span>
+                    <span class="corner tr" aria-hidden="true"></span>
+                    <span class="corner bl" aria-hidden="true"></span>
+                    <span class="corner br" aria-hidden="true"></span>
+                    <img src="Assets/Images/ayushb.webp" alt="Black-and-white portrait of Ayush Bhargava" width="900" height="900" loading="lazy" decoding="async">
+                    <span class="vf-label" aria-hidden="true">A001_C001 · AYUSH</span>
+                </div>
+                <div class="about-copy">
+                    <p class="tc-label reveal"><span class="num">03</span> 00:00:45:00 · About</p>
+                    <h2 class="h2 reveal d1">Precision editing, <span class="accent">relentless</span> creativity.</h2>
+                    <p class="lead reveal d2">Hey, I'm <strong>Ayush Bhargava</strong>, a video editor and post-production specialist from Uttar Pradesh, India, working with creators and brands worldwide.</p>
+                    <p class="lead reveal d2">I care about the details viewers never notice but always feel: the cut that lands on the beat, the grade that sets the mood, and the sound design that makes a moment hit. Brand commercials, YouTube documentaries, music videos and short-form reels all get the same care.</p>
+
+                    <p class="stack-title reveal d3">Toolkit</p>
+                    <ul class="stack reveal d3">
+                        <li><i class="fa-solid fa-clapperboard" aria-hidden="true"></i> Premiere Pro</li>
+                        <li><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> After Effects</li>
+                        <li><i class="fa-solid fa-palette" aria-hidden="true"></i> DaVinci Resolve</li>
+                        <li><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Audition</li>
+                        <li><i class="fa-solid fa-music" aria-hidden="true"></i> FL Studio</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROCESS ================= -->
+        <section id="process" class="services">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <p class="tc-label reveal"><span class="num">04</span> 00:01:00:00 · Process</p>
+                        <h2 class="h2 reveal d1">From raw footage to <span class="accent">final export</span>.</h2>
+                    </div>
+                    <p class="lead reveal d2">A simple workflow that keeps you in the loop without slowing the edit down.</p>
+                </div>
+                <ol class="process-track" id="process-track">
+                    <li class="step">
+                        <span class="marker">01</span>
+                        <h3>Brief</h3>
+                        <p>You share footage, references and goals. I ask about audience, platform and deadline.</p>
+                        <div class="clip" aria-hidden="true"></div>
+                    </li>
+                    <li class="step">
+                        <span class="marker">02</span>
+                        <h3>First cut</h3>
+                        <p>I build the story and pacing first, so we agree on structure before polishing.</p>
+                        <div class="clip" aria-hidden="true"></div>
+                    </li>
+                    <li class="step">
+                        <span class="marker">03</span>
+                        <h3>Refine</h3>
+                        <p>Color, sound design, motion graphics and your feedback, until every cut feels right.</p>
+                        <div class="clip" aria-hidden="true"></div>
+                    </li>
+                    <li class="step">
+                        <span class="marker">04</span>
+                        <h3>Deliver</h3>
+                        <p>Final exports in every format and aspect ratio you need, ready to post.</p>
+                        <div class="clip" aria-hidden="true"></div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact">
+            <div class="wrap">
+                <div class="contact-card">
+                    <div>
+                        <p class="tc-label reveal"><span class="num">05</span> 00:01:15:00 · Contact</p>
+                        <h2 class="h2 reveal d1">Got footage? <span class="accent">Let's make it hit.</span></h2>
+                        <p class="lead reveal d2" style="margin-top: 22px;">Tell me about your project: what it is, where it'll be posted, and when you need it. I'll reply with ideas and next steps.</p>
+
+                        <div class="contact-lines reveal d3">
+                            <a class="contact-line" href="mailto:ayushb.exe@gmail.com">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <div><small>Email</small><span>ayushb.exe@gmail.com</span></div>
+                            </a>
+                            <!-- To add WhatsApp: copy the line above, set href="https://wa.me/91XXXXXXXXXX" (your number, digits only)
+                                 and use the icon class "fa-brands fa-whatsapp" -->
+                            <div class="contact-line">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <div><small>Based in</small><span>Uttar Pradesh, India · Remote worldwide</span></div>
+                            </div>
+                        </div>
+
+                        <div class="socials reveal d3">
+                            <a href="https://www.youtube.com/@CigarettesafterFx" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/ayushbthecreator/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/ayush-bhargava-94aaba318/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="form reveal d2" novalidate>
+                        <div class="field">
+                            <label for="cf-name">Your name</label>
+                            <input id="cf-name" name="name" type="text" required maxlength="100" autocomplete="name" placeholder="John Doe">
+                        </div>
+                        <div class="field">
+                            <label for="cf-email">Email address</label>
+                            <input id="cf-email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="john@example.com">
+                        </div>
+                        <div class="field">
+                            <label for="cf-message">Project details</label>
+                            <textarea id="cf-message" name="message" rows="5" required maxlength="5000" placeholder="What's the video, where will it be posted, and what's your timeline and budget?"></textarea>
+                        </div>
+                        <!-- Honeypot: hidden from people, bots tend to fill it -->
+                        <div class="honeypot" aria-hidden="true">
+                            <label for="cf-website">Website</label>
+                            <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                        </div>
+                        <button id="cf-submit" type="submit" class="btn btn-primary">Send message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                        <p id="cf-status" class="form-status" role="status" aria-live="polite" hidden></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="wrap">
+            <a href="#top" class="brand" aria-label="Back to top">
+                <span class="brand-mark">AB</span>
+                <span>AYUSHB<b>THECREATOR</b></span>
+            </a>
+            <nav aria-label="Footer">
+                <a href="#work">Work</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p>&copy; <span id="year">2026</span> Ayush Bhargava. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= LIGHTBOX PLAYER ================= -->
+    <dialog class="player" id="player" aria-labelledby="player-title">
+        <div class="player-head">
+            <p class="player-title" id="player-title"></p>
+            <button class="ctrl" id="player-close" type="button" aria-label="Close video"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        </div>
+        <video id="player-video" controls playsinline></video>
+    </dialog>
+
+    <script>
+        (() => {
+            const $ = (sel, root = document) => root.querySelector(sel);
+            const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            $('#year').textContent = new Date().getFullYear();
+
+            /* ---------- Nav: background on scroll, mobile menu, active link ---------- */
+            const navbar = $('#navbar');
+            const menuBtn = $('#menu-btn');
+            const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            const setMenu = (open) => {
+                navbar.classList.toggle('open', open);
+                menuBtn.setAttribute('aria-expanded', String(open));
+                menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+                $('i', menuBtn).className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+            };
+            menuBtn.addEventListener('click', () => setMenu(!navbar.classList.contains('open')));
+            $$('#mobile-menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+            const navLinks = $$('.nav-links a:not(.btn)');
+            const sectionObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+            ['work', 'services', 'about', 'process', 'contact'].forEach(id => sectionObserver.observe(document.getElementById(id)));
+
+            /* ---------- Reveal on scroll ---------- */
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            $$('.reveal, #process-track').forEach(el => revealObserver.observe(el));
+
+            /* ---------- Showreel program monitor ---------- */
+            const reel = $('#showreel-video');
+            const toggleBtn = $('#reel-toggle');
+            const soundBtn = $('#sound-toggle');
+            const tcEl = $('#reel-tc');
+            const durEl = $('#reel-dur');
+            const scrub = $('#reel-scrub');
+            const fill = $('#reel-fill');
+            const head = $('#reel-head');
+            const FPS = 60;
+            let userPaused = false;
+
+            const pad = n => String(n).padStart(2, '0');
+            const timecode = t => {
+                t = Math.max(0, t || 0);
+                const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, s = Math.floor(t) % 60;
+                const f = Math.floor((t % 1) * FPS);
+                return `${pad(h)}:${pad(m)}:${pad(s)}:${pad(f)}`;
+            };
+            const setPlayIcon = () => {
+                const playing = !reel.paused;
+                $('i', toggleBtn).className = playing ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+                toggleBtn.setAttribute('aria-label', playing ? 'Pause showreel' : 'Play showreel');
+            };
+            const render = () => {
+                const d = reel.duration || 0;
+                const pct = d ? (reel.currentTime / d) * 100 : 0;
+                tcEl.textContent = timecode(reel.currentTime);
+                fill.style.width = pct + '%';
+                head.style.left = pct + '%';
+                scrub.setAttribute('aria-valuenow', Math.round(pct));
+                if (!reel.paused) requestAnimationFrame(render);
+            };
+            reel.addEventListener('loadedmetadata', () => { durEl.textContent = timecode(reel.duration); render(); });
+            reel.addEventListener('play', () => { setPlayIcon(); requestAnimationFrame(render); });
+            reel.addEventListener('pause', setPlayIcon);
+            reel.addEventListener('seeked', render);
+
+            if (reduceMotion) { reel.removeAttribute('autoplay'); reel.pause(); userPaused = true; }
+
+            toggleBtn.addEventListener('click', () => {
+                if (reel.paused) { userPaused = false; reel.play().catch(() => {}); }
+                else { userPaused = true; reel.pause(); }
+            });
+            soundBtn.addEventListener('click', () => {
+                reel.muted = !reel.muted;
+                const on = !reel.muted;
+                soundBtn.setAttribute('aria-pressed', String(on));
+                soundBtn.setAttribute('aria-label', on ? 'Turn sound off' : 'Turn sound on');
+                $('i', soundBtn).className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+                if (on && reel.paused) { userPaused = false; reel.play().catch(() => {}); }
+            });
+
+            const seekTo = clientX => {
+                const r = scrub.getBoundingClientRect();
+                const p = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
+                if (reel.duration) { reel.currentTime = p * reel.duration; render(); }
+            };
+            scrub.addEventListener('pointerdown', e => {
+                scrub.setPointerCapture(e.pointerId);
+                seekTo(e.clientX);
+                const move = ev => seekTo(ev.clientX);
+                const up = () => { scrub.removeEventListener('pointermove', move); scrub.removeEventListener('pointerup', up); };
+                scrub.addEventListener('pointermove', move);
+                scrub.addEventListener('pointerup', up);
+            });
+            scrub.addEventListener('keydown', e => {
+                if (!reel.duration) return;
+                if (e.key === 'ArrowRight') { reel.currentTime = Math.min(reel.duration, reel.currentTime + 1); e.preventDefault(); }
+                if (e.key === 'ArrowLeft') { reel.currentTime = Math.max(0, reel.currentTime - 1); e.preventDefault(); }
+                render();
+            });
+
+            // Pause the showreel when it scrolls out of view
+            new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting && !userPaused && !player.open) reel.play().catch(() => {});
+                else if (!entry.isIntersecting) reel.pause();
+            }, { threshold: 0.15 }).observe(reel);
+
+            /* ---------- Preview videos: load and play only while visible ---------- */
+            const previews = $$('video.lazy-video');
+            const previewObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    const v = entry.target;
+                    if (entry.isIntersecting) {
+                        if (reduceMotion) return; // keep the poster frame only
+                        if (!v.src && v.dataset.src) { v.src = v.dataset.src; v.preload = 'auto'; }
+                        if (!player.open) v.play().catch(() => {});
+                    } else if (!v.paused) {
+                        v.pause();
+                    }
+                });
+            }, { threshold: 0.3 });
+            previews.forEach(v => previewObserver.observe(v));
+
+            /* ---------- Lightbox player ---------- */
+            const player = $('#player');
+            const playerVideo = $('#player-video');
+            const playerTitle = $('#player-title');
+            let reelWasPlaying = false;
+            let lastTrigger = null;
+
+            const openPlayer = (src, title, portrait, trigger) => {
+                lastTrigger = trigger;
+                reelWasPlaying = !reel.paused;
+                reel.pause();
+                previews.forEach(v => v.pause());
+                player.classList.toggle('portrait', portrait);
+                playerTitle.innerHTML = '';
+                const b = document.createElement('b');
+                b.textContent = title;
+                playerTitle.append('▶ ', b);
+                playerVideo.src = src;
+                playerVideo.muted = false;
+                player.showModal();
+                cleanedUp = false;
+                playerVideo.play().catch(() => {});
+            };
+            let cleanedUp = true;
+            const cleanup = () => {
+                if (cleanedUp) return;
+                cleanedUp = true;
+                playerVideo.pause();
+                playerVideo.removeAttribute('src');
+                playerVideo.load();
+                if (reelWasPlaying && !userPaused) reel.play().catch(() => {});
+                previews.forEach(v => {
+                    const r = v.getBoundingClientRect();
+                    if (v.src && r.bottom > 0 && r.top < innerHeight && !reduceMotion) v.play().catch(() => {});
+                });
+                if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+            };
+            const closePlayer = () => { cleanup(); if (player.open) player.close(); };
+            player.addEventListener('cancel', cleanup); // Escape key
+            player.addEventListener('close', cleanup);
+            $('#player-close').addEventListener('click', closePlayer);
+            player.addEventListener('click', e => { if (e.target === player) closePlayer(); });
+
+            $$('[data-play]').forEach(el => el.addEventListener('click', () => {
+                openPlayer(el.dataset.play, el.dataset.title || 'Video', el.hasAttribute('data-portrait'), el);
+            }));
+
+            /* ---------- Contact form ---------- */
+            const form = $('#contact-form');
+            const submitBtn = $('#cf-submit');
+            const status = $('#cf-status');
+            const FALLBACK = 'ayushb.exe@gmail.com';
+            const submitLabel = submitBtn.innerHTML;
+
+            const showStatus = (ok, text) => {
+                status.hidden = false;
+                status.className = 'form-status ' + (ok ? 'ok' : 'err');
+                status.textContent = text;
+            };
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                if (!form.checkValidity()) {
+                    showStatus(false, 'Please fill in your name, a valid email and your project details.');
+                    form.reportValidity();
+                    return;
+                }
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                try {
+                    const response = await fetch('/send-email', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
+                    });
+                    const result = await response.json().catch(() => ({}));
+                    if (response.ok && result.success) {
+                        showStatus(true, "Thanks! Your message is on its way. I'll get back to you soon.");
+                        form.reset();
+                    } else {
+                        showStatus(false, result.error || `Something went wrong. Please email me directly at ${FALLBACK}.`);
+                    }
+                } catch (err) {
+                    console.error(err);
+                    showStatus(false, `Couldn't reach the server. Please email me directly at ${FALLBACK}.`);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = submitLabel;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
