@@ -457,7 +457,13 @@
         .meta div { display: flex; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; }
         .meta dt { color: var(--dim); }
         .meta dd { margin: 0; color: var(--text); font-weight: 500; text-align: right; }
-        @media (max-width: 900px) { .featured { grid-template-columns: 1fr; } }
+        .featured + .featured { margin-top: 24px; }
+        .featured.flip { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+        .featured.flip .media { order: 2; }
+        @media (max-width: 900px) {
+            .featured, .featured.flip { grid-template-columns: 1fr; }
+            .featured.flip .media { order: 0; }
+        }
 
         /* Short-form row */
         .shortform { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 4vw, 56px); margin-top: clamp(56px, 7vw, 96px); align-items: start; }
@@ -781,6 +787,26 @@
                             <div><dt>Format</dt><dd>YouTube explainer, 16:9</dd></div>
                             <div><dt>Role</dt><dd>Edit, motion, typography</dd></div>
                             <div><dt>Tools</dt><dd>DaVinci Resolve</dd></div>
+                        </dl>
+                    </div>
+                </article>
+
+                <!-- Second landscape project (info on the left) -->
+                <article class="featured flip reveal">
+                    <button class="media" type="button" data-play="Assets/Videos/web/superchip_vlsi.mp4" data-title="SuperChip: The Future Runs on Silicon" aria-label="Play SuperChip: The Future Runs on Silicon">
+                        <video class="lazy-video" data-src="Assets/Videos/web/superchip_vlsi.mp4" poster="Assets/Images/posters/superchip_vlsi.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+                        <span class="chip">Animated Explainer</span>
+                        <span class="play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                        <span class="duration">01:08</span>
+                    </button>
+                    <div class="featured-info">
+                        <span class="kicker">Education promo · Motion graphics</span>
+                        <h3>SuperChip: The Future Runs on Silicon</h3>
+                        <p>A promo for a B.Tech in VLSI Design. It explains how billions of transistors fit on one chip and why the industry needs engineers, then introduces the course.</p>
+                        <dl class="meta">
+                            <div><dt>Format</dt><dd>Promo explainer, 16:9</dd></div>
+                            <div><dt>Role</dt><dd>Script, voiceover, animation</dd></div>
+                            <div><dt>Tools</dt><dd>HyperFrames, AI voiceover</dd></div>
                         </dl>
                     </div>
                 </article>
