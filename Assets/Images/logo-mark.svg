@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AyushBTheCreator logo">
+  <defs>
+    <linearGradient id="abTile" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="64" y2="64">
+      <stop offset="0" stop-color="#a6ff85"/>
+      <stop offset="0.5" stop-color="#39ff14"/>
+      <stop offset="1" stop-color="#1fc90a"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#abTile)"/>
+  <g transform="translate(1.5 0)" stroke="#061200" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A: left leg, crossbar, and the stem it shares with B -->
+    <path d="M9 50 L31 13 V50 M16.2 38 H31" fill="none"/>
+    <!-- B upper bowl -->
+    <path d="M31 13 H39 a8 8 0 0 1 0 16 H31" fill="none"/>
+    <!-- B lower bowl: solid -->
+    <path d="M31 29 H41.5 a10.5 10.5 0 0 1 0 21 H31 Z" fill="#061200"/>
+  </g>
+  <!-- Play button cut out of the lower bowl -->
+  <path d="M38.6 34.6 V44.4 L46.6 39.5 Z" fill="url(#abTile)" stroke="url(#abTile)" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

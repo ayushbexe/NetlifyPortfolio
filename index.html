@@ -7,6 +7,7 @@
     <meta name="description" content="Ayush Bhargava is a video editor and motion designer cutting reels, ads, YouTube videos and brand films. Based in Uttar Pradesh, India, working with clients worldwide.">
     <meta name="theme-color" content="#08090a">
     <link rel="icon" href="Assets/Images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Assets/Images/apple-touch-icon.png">
 
     <!-- Social share preview (LinkedIn, WhatsApp, Instagram, X).
          If you move to a custom domain, change the https://ayushbthecreator.netlify.app addresses below. -->
@@ -180,11 +181,11 @@
         .nav .wrap { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
         .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.03em; font-size: 17px; }
         .brand-mark {
-            width: 36px; height: 36px; border-radius: 10px; flex: none;
-            display: grid; place-items: center;
-            background: var(--accent); color: var(--accent-ink); font-weight: 900; font-size: 14px; letter-spacing: 0;
+            width: 36px; height: 36px; border-radius: 10px; flex: none; display: block;
             box-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+            transition: transform 0.4s var(--ease), box-shadow 0.4s;
         }
+        .brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); box-shadow: 0 0 26px rgba(57, 255, 20, 0.55); }
         .brand span b { color: var(--accent); font-weight: 800; }
         .nav-links { display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; }
         .nav-links a:not(.btn) { color: var(--muted); transition: color 0.2s; position: relative; }
@@ -655,7 +656,7 @@
     <header class="nav" id="navbar">
         <div class="wrap">
             <a href="#top" class="brand" aria-label="AyushBTheCreator, back to top">
-                <span class="brand-mark">AB</span>
+                <img class="brand-mark" src="Assets/Images/logo-mark.svg" alt="" width="36" height="36">
                 <span>AYUSHB<b>THECREATOR</b></span>
             </a>
             <nav class="nav-links" aria-label="Main">
@@ -1129,7 +1130,7 @@
     <footer class="footer">
         <div class="wrap">
             <a href="#top" class="brand" aria-label="Back to top">
-                <span class="brand-mark">AB</span>
+                <img class="brand-mark" src="Assets/Images/logo-mark.svg" alt="" width="36" height="36">
                 <span>AYUSHB<b>THECREATOR</b></span>
             </a>
             <nav aria-label="Footer">
