@@ -1,0 +1,11 @@
+# Cloudflare serves the repo root as static files. Only publish index.html and Assets/.
+# Everything else (server code, config, package files, backups) stays private.
+*
+!index.html
+!Assets/
+!Assets/**
+# Original full-size videos are local only; the site uses Assets/Videos/web/.
+Assets/Videos/*.mp4
+Assets/Videos/*.mov
+**/desktop.ini
+**/Thumbs.db

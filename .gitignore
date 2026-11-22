@@ -10,3 +10,4 @@ Thumbs.db
 # The site only uses the web copies in Assets/Videos/web/.
 /Assets/Videos/*.mp4
 /Assets/Videos/*.mov
+.wrangler/

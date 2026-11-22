@@ -1,5 +1,5 @@
 // Local development server: `npm start`, then open http://localhost:3000.
-// The live site runs on Netlify instead (see netlify.toml and netlify/functions/send-email.js).
+// The live site runs on Cloudflare instead (see wrangler.jsonc and worker/index.js).
 const express = require('express');
 const path = require('path');
 const { handleContact } = require('./lib/contact');

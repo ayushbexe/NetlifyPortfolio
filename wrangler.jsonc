@@ -1,0 +1,15 @@
+// Cloudflare Worker config. Workers Builds deploys this on every push to main.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "netlifyportfolio",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    // The Worker runs first so it can redirect the bare domain to www and handle /send-email.
+    "run_worker_first": true
+  },
+  "observability": { "enabled": true }
+  // Secret (set in the Cloudflare dashboard, never in this file): RESEND_API_KEY
+}
