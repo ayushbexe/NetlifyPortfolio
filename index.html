@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ayush Bhargava | Video Editor & Motion Designer</title>
-    <meta name="description" content="Ayush Bhargava is a video editor and motion designer cutting reels, ads, YouTube videos and brand films. Based in Uttar Pradesh, India, working with clients worldwide.">
+    <meta name="description" content="Ayush Bhargava is a video editor and motion designer for creators, founders and brands: short-form reels, UGC ads, YouTube long form and animated explainers, cut for retention. Remote, working with clients worldwide.">
     <meta name="theme-color" content="#08090a">
     <link rel="icon" href="Assets/Images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="Assets/Images/apple-touch-icon.png">
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ayush Bhargava">
     <meta property="og:title" content="Ayush Bhargava | Video Editor & Motion Designer">
-    <meta property="og:description" content="Reels, ads, YouTube videos and brand films, edited to keep people watching.">
+    <meta property="og:description" content="Short-form, YouTube and ads for creators and brands, edited so people watch to the end.">
     <meta property="og:url" content="https://www.ayushbthecreator.com/">
     <meta property="og:image" content="https://www.ayushbthecreator.com/Assets/Images/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -24,7 +24,7 @@
     <meta property="og:image:alt" content="Are you looking for a video editor? Ayush Bhargava's showreel">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ayush Bhargava | Video Editor & Motion Designer">
-    <meta name="twitter:description" content="Reels, ads, YouTube videos and brand films, edited to keep people watching.">
+    <meta name="twitter:description" content="Short-form, YouTube and ads for creators and brands, edited so people watch to the end.">
     <meta name="twitter:image" content="https://www.ayushbthecreator.com/Assets/Images/og-image.jpg">
 
     <script type="application/ld+json">
@@ -116,7 +116,7 @@
             inset: -50%;
             z-index: 90;
             pointer-events: none;
-            opacity: 0.055;
+            opacity: 0.035;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
             animation: grain 1.2s steps(6) infinite;
         }
@@ -140,19 +140,21 @@
         }
         .tc-label::before {
             content: ""; width: 8px; height: 8px; border-radius: 2px;
-            background: var(--accent); box-shadow: 0 0 12px rgba(57, 255, 20, 0.7);
+            background: var(--accent); box-shadow: 0 0 8px rgba(57, 255, 20, 0.45);
         }
         .tc-label .num { color: var(--accent); }
 
         .h2 {
-            font-size: clamp(36px, 5.2vw, 64px);
-            font-weight: 800; line-height: 1.02; letter-spacing: -0.03em;
-            margin-top: 18px;
+            font-size: clamp(36px, 5vw, 66px);
+            font-weight: 700; line-height: 1.02; letter-spacing: -0.035em;
+            margin-top: 18px; max-width: 16ch;
         }
+        .soft { font-weight: 300; color: var(--muted); }
         .accent { color: var(--accent); }
         .lead { color: var(--muted); font-size: clamp(17px, 1.5vw, 19px); max-width: 58ch; }
         .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: clamp(40px, 5vw, 64px); }
-        .section-head .lead { max-width: 44ch; }
+        .section-head > div { flex: 1 1 520px; }
+        .section-head .lead { max-width: 44ch; flex: 0 1 44ch; }
 
         /* ================= BUTTONS ================= */
         .btn {
@@ -161,8 +163,8 @@
             font-weight: 700; font-size: 15px; white-space: nowrap;
             transition: transform 0.25s var(--ease), box-shadow 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
         }
-        .btn-primary { background: var(--accent); color: var(--accent-ink); }
-        .btn-primary:hover { transform: translateY(-2px); background: var(--accent-2); box-shadow: 0 12px 32px -10px rgba(57, 255, 20, 0.6); }
+        .btn-primary { background: var(--accent); color: var(--accent-ink); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(57, 255, 20, 0.4); }
+        .btn-primary:hover { transform: translateY(-2px); background: var(--accent-2); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 14px 36px -12px rgba(57, 255, 20, 0.55); }
         .btn-ghost { border: 1px solid var(--line-2); color: var(--text); background: rgba(255, 255, 255, 0.02); }
         .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
         .btn-sm { height: 40px; padding: 0 18px; font-size: 14px; }
@@ -242,10 +244,12 @@
             70% { box-shadow: 0 0 0 10px rgba(57, 255, 20, 0); }
             100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
         }
+        .status-sep { color: var(--line-2); }
+        .status-dim { color: var(--dim); }
         .hero h1 {
-            font-size: clamp(44px, 4.6vw, 74px);
-            font-weight: 900; line-height: 0.98; letter-spacing: -0.04em;
-            margin: 24px 0 22px;
+            font-size: clamp(44px, 4.8vw, 78px);
+            font-weight: 700; line-height: 1; letter-spacing: -0.045em;
+            margin: 26px 0 24px;
         }
         .hero h1 .accent { display: inline-block; }
         .hero .lead { max-width: 46ch; }
@@ -332,8 +336,8 @@
         }
         .ticker-track { display: flex; width: max-content; animation: ticker 40s linear infinite; }
         .ticker-track span {
-            font-size: clamp(20px, 2.4vw, 30px); font-weight: 800; letter-spacing: -0.01em;
-            padding: 0 22px; color: var(--muted); white-space: nowrap;
+            font-size: clamp(20px, 2.4vw, 30px); font-weight: 300; letter-spacing: -0.015em;
+            padding: 0 26px; color: var(--muted); white-space: nowrap;
         }
         .ticker-track span.sep { color: var(--accent); padding: 0; }
         @keyframes ticker { to { transform: translateX(-50%); } }
@@ -375,7 +379,7 @@
 
         /* ================= SERVICES ================= */
         .services { background: var(--bg-2); border-block: 1px solid var(--line); }
-        .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
         .service {
             position: relative; padding: 32px 28px 30px; border-radius: var(--radius);
             background: var(--surface); border: 1px solid var(--line);
@@ -431,7 +435,7 @@
             width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%;
             display: grid; place-items: center; font-size: 20px;
             background: var(--accent); color: var(--accent-ink);
-            box-shadow: 0 0 0 8px rgba(57, 255, 20, 0.15), 0 10px 40px rgba(57, 255, 20, 0.35);
+            box-shadow: 0 0 0 8px rgba(57, 255, 20, 0.12), 0 10px 30px rgba(0, 0, 0, 0.45);
             transform: scale(0.85); opacity: 0.9;
             transition: transform 0.35s var(--ease), opacity 0.3s;
         }
@@ -631,6 +635,95 @@
             .player.portrait video { width: 100%; height: auto; max-height: calc(94vh - 54px); }
         }
 
+        /* ================= PREMIUM LAYER ================= */
+        /* Cards: soft top-lit gradient and a faint inner highlight instead of flat fills */
+        .featured, .service, .contact-card, .monitor {
+            background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 38%, var(--bg-2) 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 30px 80px -40px rgba(0, 0, 0, 0.8);
+        }
+        .monitor { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 40px 100px -30px rgba(0, 0, 0, 0.9), 0 0 120px -40px rgba(57, 255, 20, 0.18); }
+        .featured-info h3, .shortform-intro h3, .service h3, .step h3 { font-weight: 700; }
+        .nav.scrolled { background: rgba(8, 9, 10, 0.72); }
+
+        /* Hero: client line */
+        .clients {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px;
+            margin-top: 26px;
+        }
+        .clients small {
+            font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim);
+        }
+        .clients span { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: var(--muted); }
+        .stat b em { margin: 0 2px; }
+
+        /* Work: category index and group headers */
+        .work-index {
+            display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+            border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden;
+            margin-bottom: clamp(48px, 6vw, 80px); background: var(--bg-2);
+        }
+        .work-index a {
+            display: flex; align-items: center; gap: 12px; padding: 18px 20px;
+            font-size: 15px; font-weight: 500; color: var(--muted);
+            transition: background 0.25s, color 0.25s;
+        }
+        .work-index a + a { border-left: 1px solid var(--line); }
+        .work-index a:hover { background: var(--surface); color: var(--text); }
+        .work-index em { margin-left: auto; font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--dim); }
+        .wi-tag {
+            font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--accent);
+            padding: 3px 7px; border-radius: 6px; border: 1px solid rgba(57, 255, 20, 0.25); background: var(--accent-soft);
+        }
+        .group-head { margin-bottom: 28px; }
+        .group-head h3 { font-size: clamp(28px, 3vw, 38px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; margin-top: 14px; }
+        .shortform, .featured { scroll-margin-top: 96px; }
+
+        .work-cta {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;
+            margin-top: clamp(64px, 8vw, 104px); padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 40px);
+            border: 1px solid var(--line); border-radius: var(--radius);
+            background: radial-gradient(120% 160% at 0% 0%, rgba(57, 255, 20, 0.09), transparent 55%), var(--surface);
+        }
+        .work-cta p { font-size: clamp(18px, 1.8vw, 22px); color: var(--muted); max-width: 52ch; }
+        .work-cta strong { color: var(--text); font-weight: 700; display: block; font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 8px; }
+
+        /* Services */
+        .service { padding: clamp(28px, 3vw, 40px); }
+        .service-top { display: flex; align-items: flex-start; justify-content: space-between; }
+        .service-num { font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: 0.08em; }
+        .service h3 { font-size: clamp(22px, 2vw, 27px); }
+        .service p { max-width: 48ch; }
+        .service .best-for { margin-top: 18px; font-size: 14px; color: var(--text); }
+        .best-for span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-right: 8px; }
+        .includes {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px;
+            margin-top: 18px; padding: 22px 28px; border-radius: var(--radius);
+            border: 1px solid var(--line); background: var(--bg);
+        }
+        .includes-title { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+        .includes ul { display: flex; flex-wrap: wrap; gap: 10px 26px; list-style: none; padding: 0; margin: 0; }
+        .includes li { display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 500; }
+        .includes li i { color: var(--accent); font-size: 12px; }
+
+        /* Footer */
+        .footer-brand { display: grid; gap: 8px; }
+        .footer-brand small { font-size: 13px; color: var(--dim); }
+
+        @media (max-width: 900px) {
+            .work-index { grid-template-columns: 1fr 1fr; }
+            .work-index a:nth-child(3) { border-left: 0; }
+            .work-index a:nth-child(n+3) { border-top: 1px solid var(--line); }
+        }
+        @media (max-width: 520px) {
+            .work-index a { padding: 14px; font-size: 14px; gap: 8px; }
+            .work-index em { display: none; }
+            .clients { gap: 8px 18px; }
+            .hero-stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 14px 16px; }
+            .stat b { font-size: 22px; }
+            .stat span { font-size: 12px; }
+            .clients small { flex-basis: 100%; }
+        }
+
         /* ================= REVEAL ON SCROLL ================= */
         .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
         .js .reveal.in { opacity: 1; transform: none; }
@@ -664,7 +757,7 @@
                 <a href="#services">Services</a>
                 <a href="#about">About</a>
                 <a href="#process">Process</a>
-                <a href="#contact" class="btn btn-primary btn-sm">Let's talk</a>
+                <a href="#contact" class="btn btn-primary btn-sm">Start a project</a>
             </nav>
             <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -675,7 +768,7 @@
             <a href="#services">Services</a>
             <a href="#about">About</a>
             <a href="#process">Process</a>
-            <a href="#contact" class="btn btn-primary">Let's talk</a>
+            <a href="#contact" class="btn btn-primary">Start a project</a>
         </nav>
     </header>
 
@@ -687,9 +780,9 @@
                 <div class="hero-grid">
                     <div>
                         <!-- Update this line whenever your availability changes -->
-                        <p class="status reveal"><span class="dot" aria-hidden="true"></span> Available for new projects</p>
-                        <h1 class="reveal d1">Edits that keep people <span class="accent">watching.</span></h1>
-                        <p class="lead reveal d2">I'm Ayush Bhargava, a video editor and motion designer. I cut reels, ads, YouTube videos and brand films with tight pacing, clean color and sound that hits.</p>
+                        <p class="status reveal"><span class="dot" aria-hidden="true"></span> Available for new projects <span class="status-sep" aria-hidden="true">/</span> <span class="status-dim">Remote worldwide</span></p>
+                        <h1 class="reveal d1">I turn <span class="soft">raw footage</span> into videos people <span class="accent">finish.</span></h1>
+                        <p class="lead reveal d2">Video editor and motion designer for creators, founders and brands. Short-form, YouTube and ads, cut for retention, with motion graphics, captions and sound design built in.</p>
                         <div class="hero-ctas reveal d3">
                             <button class="btn btn-primary" type="button" data-play="Assets/Videos/web/showreel.mp4" data-title="Showreel 2026">
                                 <i class="fa-solid fa-play" aria-hidden="true"></i> Watch showreel
@@ -698,8 +791,14 @@
                         </div>
                         <div class="hero-stats reveal d3">
                             <div class="stat"><b>75<em>+</em></b><span>Projects delivered</span></div>
-                            <div class="stat"><b>1<em>+</em></b><span>Years of experience</span></div>
-                            <div class="stat"><b>Remote</b><span>Working worldwide</span></div>
+                            <div class="stat"><b>9:16<em>/</em>16:9</b><span>Short and long form</span></div>
+                            <div class="stat"><b>In-house</b><span>Motion graphics</span></div>
+                        </div>
+                        <div class="clients reveal d3">
+                            <small>Recent work for</small>
+                            <span>Bulba</span>
+                            <span>Invest Mindset</span>
+                            <span>Welham Girls' School</span>
                         </div>
                     </div>
 
@@ -738,19 +837,19 @@
         <div class="ticker" aria-hidden="true">
             <div class="ticker-track">
                 <span>Short-form reels</span><span class="sep">✦</span>
-                <span>Meta ads</span><span class="sep">✦</span>
-                <span>YouTube videos</span><span class="sep">✦</span>
-                <span>Brand films</span><span class="sep">✦</span>
+                <span>UGC &amp; Meta ads</span><span class="sep">✦</span>
+                <span>YouTube long form</span><span class="sep">✦</span>
+                <span>Podcast clips</span><span class="sep">✦</span>
                 <span>Motion graphics</span><span class="sep">✦</span>
-                <span>Color grading</span><span class="sep">✦</span>
-                <span>Sound design</span><span class="sep">✦</span>
+                <span>Animated explainers</span><span class="sep">✦</span>
+                <span>Color &amp; sound</span><span class="sep">✦</span>
                 <span>Short-form reels</span><span class="sep">✦</span>
-                <span>Meta ads</span><span class="sep">✦</span>
-                <span>YouTube videos</span><span class="sep">✦</span>
-                <span>Brand films</span><span class="sep">✦</span>
+                <span>UGC &amp; Meta ads</span><span class="sep">✦</span>
+                <span>YouTube long form</span><span class="sep">✦</span>
+                <span>Podcast clips</span><span class="sep">✦</span>
                 <span>Motion graphics</span><span class="sep">✦</span>
-                <span>Color grading</span><span class="sep">✦</span>
-                <span>Sound design</span><span class="sep">✦</span>
+                <span>Animated explainers</span><span class="sep">✦</span>
+                <span>Color &amp; sound</span><span class="sep">✦</span>
             </div>
         </div>
 
@@ -760,9 +859,21 @@
                 <div class="section-head">
                     <div>
                         <p class="tc-label reveal"><span class="num">01</span> 00:00:15:00 · Selected work</p>
-                        <h2 class="h2 reveal d1">Recent <span class="accent">cuts</span>.</h2>
+                        <h2 class="h2 reveal d1">Work that <span class="accent">holds attention.</span></h2>
                     </div>
-                    <p class="lead reveal d2">A few recent projects across short-form ads, personal edits and animated explainers. Tap any video to watch it with sound.</p>
+                    <p class="lead reveal d2">YouTube long form, short-form ads and clips, animated explainers and stream highlights. Tap any video to watch it with sound.</p>
+                </div>
+
+                <nav class="work-index reveal" aria-label="Work categories">
+                    <a href="#long-form"><span class="wi-tag">16:9</span> Long form <em>03</em></a>
+                    <a href="#short-form"><span class="wi-tag">9:16</span> Short form &amp; ads <em>04</em></a>
+                    <a href="#animated"><span class="wi-tag">AI</span> Animated shorts <em>03</em></a>
+                    <a href="#clips"><span class="wi-tag">LIVE</span> Stream clips <em>03</em></a>
+                </nav>
+
+                <div class="group-head reveal" id="long-form">
+                    <p class="tc-label"><span class="num">16:9</span> Long form</p>
+                    <h3>YouTube videos <span class="soft">&amp; explainers.</span></h3>
                 </div>
 
                 <!--
@@ -833,11 +944,11 @@
                 </article>
 
                 <!-- Short-form row -->
-                <div class="shortform">
+                <div class="shortform" id="short-form">
                     <div class="shortform-intro reveal">
-                        <p class="tc-label"><span class="num">9:16</span> Short form</p>
+                        <p class="tc-label"><span class="num">9:16</span> Short form &amp; ads</p>
                         <h3>Built for the scroll.</h3>
-                        <p>Hooks in the first second, pacing that holds attention, and captions and sound design made for Reels and Shorts.</p>
+                        <p>Hooks in the first second, pacing that holds attention, and captions and sound design made for Reels, Shorts and paid ads.</p>
                     </div>
 
                     <div class="reel-row">
@@ -892,7 +1003,7 @@
                 </div>
 
                 <!-- AI animated row -->
-                <div class="shortform ai-row">
+                <div class="shortform ai-row" id="animated">
                     <div class="shortform-intro reveal">
                         <p class="tc-label"><span class="num">AI</span> Animated shorts</p>
                         <h3>Faceless videos, <span class="accent">fully animated.</span></h3>
@@ -951,7 +1062,7 @@
                 </div>
 
                 <!-- Stream clipping row -->
-                <div class="shortform ai-row">
+                <div class="shortform ai-row" id="clips">
                     <div class="shortform-intro reveal">
                         <p class="tc-label"><span class="num">LIVE</span> Stream clipping</p>
                         <h3>Hours of stream, <span class="accent">cut to the moments.</span></h3>
@@ -1002,6 +1113,11 @@
                         </article>
                     </div>
                 </div>
+
+                <div class="work-cta reveal">
+                    <p><strong>Have footage that needs this treatment?</strong> <span>Send it over and I'll tell you exactly how I'd cut it.</span></p>
+                    <a href="#contact" class="btn btn-primary">Start a project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
             </div>
         </section>
 
@@ -1011,29 +1127,63 @@
                 <div class="section-head">
                     <div>
                         <p class="tc-label reveal"><span class="num">02</span> 00:00:30:00 · Services</p>
-                        <h2 class="h2 reveal d1">What I can <span class="accent">cut</span> for you.</h2>
+                        <h2 class="h2 reveal d1">Pick the format.<br> <span class="accent">I'll handle the edit.</span></h2>
                     </div>
-                    <p class="lead reveal d2">From a single reel to a full campaign, I handle the edit end to end: story, pacing, color, sound and motion.</p>
+                    <p class="lead reveal d2">Every project is cut, graded, mixed and animated by me, so the style stays consistent from first cut to final export.</p>
                 </div>
                 <div class="service-grid">
                     <article class="service reveal">
-                        <span class="icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span>
-                        <h3>Short-form &amp; Reels</h3>
-                        <p>Scroll-stopping hooks, captions and punchy pacing for Instagram Reels, YouTube Shorts and TikTok.</p>
-                        <ul class="tags"><li>9:16</li><li>Captions</li><li>Hooks</li><li>Trends</li></ul>
+                        <div class="service-top">
+                            <span class="icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                            <span class="service-num" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Short-form &amp; UGC ads</h3>
+                        <p>Hooks in the first second, word-synced captions and pacing built for Reels, Shorts, TikTok and paid social.</p>
+                        <p class="best-for"><span>Best for</span> Creators, D2C brands and apps</p>
+                        <ul class="tags"><li>9:16</li><li>Hooks</li><li>Captions</li><li>UGC</li></ul>
                     </article>
                     <article class="service reveal d1">
-                        <span class="icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
-                        <h3>Ads &amp; Brand Films</h3>
-                        <p>Promos and commercials for schools, products and brands, graded and finished to match your identity.</p>
-                        <ul class="tags"><li>Meta ads</li><li>Promos</li><li>Color grade</li><li>Sound design</li></ul>
+                        <div class="service-top">
+                            <span class="icon" aria-hidden="true"><i class="fa-brands fa-youtube"></i></span>
+                            <span class="service-num" aria-hidden="true">02</span>
+                        </div>
+                        <h3>YouTube long form</h3>
+                        <p>Talking-head footage shaped into a story, with B-roll, animated charts and sound design that carry viewers from intro to outro.</p>
+                        <p class="best-for"><span>Best for</span> YouTubers, educators, finance and tech channels</p>
+                        <ul class="tags"><li>16:9</li><li>Retention</li><li>B-roll</li><li>Sound</li></ul>
                     </article>
-                    <article class="service reveal d2">
-                        <span class="icon" aria-hidden="true"><i class="fa-brands fa-youtube"></i></span>
-                        <h3>YouTube &amp; Explainers</h3>
-                        <p>Long-form edits, animated explainers and motion graphics that keep viewers watching from intro to outro.</p>
-                        <ul class="tags"><li>16:9</li><li>Motion graphics</li><li>Typography</li><li>Retention</li></ul>
+                    <article class="service reveal">
+                        <div class="service-top">
+                            <span class="icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <span class="service-num" aria-hidden="true">03</span>
+                        </div>
+                        <h3>Motion graphics &amp; explainers</h3>
+                        <p>Kinetic typography, UI animation, data visuals and 3D scenes for product launches, courses, promos and brand films.</p>
+                        <p class="best-for"><span>Best for</span> Startups, schools and course creators</p>
+                        <ul class="tags"><li>Kinetic type</li><li>UI animation</li><li>Data viz</li><li>Promos</li></ul>
                     </article>
+                    <article class="service reveal d1">
+                        <div class="service-top">
+                            <span class="icon" aria-hidden="true"><i class="fa-solid fa-scissors"></i></span>
+                            <span class="service-num" aria-hidden="true">04</span>
+                        </div>
+                        <h3>Faceless shorts &amp; clipping</h3>
+                        <p>Fully animated faceless shorts from just a topic, and the best moments of long streams and podcasts cut into ready-to-post clips.</p>
+                        <p class="best-for"><span>Best for</span> Faceless channels, streamers and podcasts</p>
+                        <ul class="tags"><li>AI voiceover</li><li>3D</li><li>Stream clips</li><li>Podcast clips</li></ul>
+                    </article>
+                </div>
+
+                <div class="includes reveal">
+                    <p class="includes-title">Every project includes</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Hook &amp; structure pass</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Word-synced captions</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Color grade</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Sound design &amp; mix</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Motion graphics</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Exports for every platform</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -1051,9 +1201,10 @@
                 </div>
                 <div class="about-copy">
                     <p class="tc-label reveal"><span class="num">03</span> 00:00:45:00 · About</p>
-                    <h2 class="h2 reveal d1">Precision editing, <span class="accent">relentless</span> creativity.</h2>
-                    <p class="lead reveal d2">Hey, I'm <strong>Ayush Bhargava</strong>, a video editor and post-production specialist from Uttar Pradesh, India, working with creators and brands worldwide.</p>
-                    <p class="lead reveal d2">I care about the details viewers never notice but always feel: the cut that lands on the beat, the grade that sets the mood, and the sound design that makes a moment hit. Brand commercials, YouTube documentaries, music videos and short-form reels all get the same care.</p>
+                    <h2 class="h2 reveal d1">One editor, <span class="accent">start to finish.</span></h2>
+                    <p class="lead reveal d2">Hey, I'm <strong>Ayush Bhargava</strong>, a video editor and motion designer from Uttar Pradesh, India, working remotely with creators and brands worldwide.</p>
+                    <p class="lead reveal d2">I handle the whole post-production myself: story and pacing, color, sound design and motion graphics. You get one point of contact and one consistent style, whether it's a 30-second UGC ad or a long YouTube video.</p>
+                    <p class="lead reveal d2">I care about the details viewers never notice but always feel: the cut that lands on the beat, the grade that sets the mood, and the sound that makes a moment hit.</p>
 
                     <p class="stack-title reveal d3">Toolkit</p>
                     <ul class="stack reveal d3">
@@ -1075,7 +1226,7 @@
                         <p class="tc-label reveal"><span class="num">04</span> 00:01:00:00 · Process</p>
                         <h2 class="h2 reveal d1">From raw footage to <span class="accent">final export</span>.</h2>
                     </div>
-                    <p class="lead reveal d2">A simple workflow that keeps you in the loop without slowing the edit down.</p>
+                    <p class="lead reveal d2">A clear workflow that keeps you in the loop without slowing the edit down. You always know what's next.</p>
                 </div>
                 <ol class="process-track" id="process-track">
                     <li class="step">
@@ -1113,7 +1264,7 @@
                     <div>
                         <p class="tc-label reveal"><span class="num">05</span> 00:01:15:00 · Contact</p>
                         <h2 class="h2 reveal d1">Got footage? <span class="accent">Let's make it hit.</span></h2>
-                        <p class="lead reveal d2" style="margin-top: 22px;">Tell me about your project: what it is, where it'll be posted, and when you need it. I'll reply with ideas and next steps.</p>
+                        <p class="lead reveal d2" style="margin-top: 22px;">Tell me what you're making, where it'll be posted and when you need it. I reply personally with ideas, a quote and next steps.</p>
 
                         <div class="contact-lines reveal d3">
                             <a class="contact-line" href="mailto:ayush@ayushbthecreator.com">
@@ -1167,10 +1318,13 @@
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="wrap">
-            <a href="#top" class="brand" aria-label="Back to top">
-                <img class="brand-mark" src="Assets/Images/logo-mark.svg" alt="" width="36" height="36">
-                <span>AYUSHB<b>THECREATOR</b></span>
-            </a>
+            <div class="footer-brand">
+                <a href="#top" class="brand" aria-label="Back to top">
+                    <img class="brand-mark" src="Assets/Images/logo-mark.svg" alt="" width="36" height="36">
+                    <span>AYUSHB<b>THECREATOR</b></span>
+                </a>
+                <small>Video editor &amp; motion designer · Remote worldwide</small>
+            </div>
             <nav aria-label="Footer">
                 <a href="#work">Work</a>
                 <a href="#services">Services</a>
